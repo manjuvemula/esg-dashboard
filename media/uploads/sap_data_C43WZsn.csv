@@ -1,0 +1,5 @@
+Fuel_Liters,Plant_Code,Date,Supplier
+1000,P101,2025-01-10,Shell
+1500,P102,2025-01-12,BP
+-200,P103,2025-01-15,IndianOil
+50000,P104,2025-01-18,HP
