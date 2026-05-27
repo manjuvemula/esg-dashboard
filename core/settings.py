@@ -4,8 +4,8 @@ Django settings for core project.
 
 from pathlib import Path
 
-
 import os
+import dj_database_url
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
@@ -84,15 +84,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # DATABASE (PostgreSQL)
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'breathe_esg',
-        'USER': 'postgres',
-        'PASSWORD': 'manju@12345',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    "default": dj_database_url.parse(
+        os.environ.get("postgresql://esg_db_t21t_user:Ml0gaFlrhlHYtYGIatsdXlzf9vSn3xnO@dpg-d8ba1lreo5us73aodaug-a/esg_db_t21t"),
+        conn_max_age=600
+    )
 }
 
 
