@@ -4,16 +4,23 @@ Django settings for core project.
 
 from pathlib import Path
 
-ALLOWED_HOSTS = ["*"]
 
+import os
+
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+CORS_ALLOW_ALL_ORIGINS = True
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY
 SECRET_KEY = 'django-insecure-change-this-key'
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+
+ALLOWED_HOSTS = [
+    "esg-backend-4uo5.onrender.com",
+]
 
 
 # APPLICATIONS
@@ -40,20 +47,15 @@ INSTALLED_APPS = [
 
 # MIDDLEWARE (IMPORTANT ORDER)
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # MUST be first
-
+    'corsheaders.middleware.CorsMiddleware',  # MUST BE FIRST
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-
     'django.middleware.csrf.CsrfViewMiddleware',
-
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-
 # ROOT URL
 ROOT_URLCONF = 'core.urls'
 

@@ -98,4 +98,4 @@ def upload_csv(request):
 @api_view(['GET'])
 def esg_history(request, company_id):
     data = ESGResult.objects.filter(company_id=company_id).values()
-    return Response(data)
+    return Response(data)     
