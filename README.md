@@ -90,7 +90,7 @@ ESG Results and Chart Visualization
 <img width="1335" height="600" alt="image" src="https://github.com/user-attachments/assets/4b4c17c9-ae42-4ba4-8be5-a4ec13720cca" />
 
 Backend Deployment:
-https://esg-backend-4uo5.onrender.com/api/companies/
+https://esg-backend-4uo5.onrender.com/
 
 
 
