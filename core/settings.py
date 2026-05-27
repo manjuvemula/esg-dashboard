@@ -85,14 +85,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # DATABASE (PostgreSQL)
 
+import os
+import dj_database_url
 
 DATABASES = {
     "default": dj_database_url.parse(
-        os.environ.get("postgresql://esg_db_t21t_user:Ml0gaFlrhlHYtYGIatsdXlzf9vSn3xnO@dpg-d8ba1lreo5us73aodaug-a/esg_db_t21t"),
+        os.environ.get("DATABASE_URL"),
         conn_max_age=600
     )
 }
-
 
 # PASSWORD VALIDATION
 AUTH_PASSWORD_VALIDATORS = [
