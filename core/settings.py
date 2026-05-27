@@ -85,12 +85,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # DATABASE (PostgreSQL)
 
-import os
-import dj_database_url
+
 
 DATABASES = {
-    "default": dj_database_url.parse(
-        os.environ.get("DATABASE_URL"),
+    "default": dj_database_url.config(
+        default=os.environ["DATABASE_URL"],
         conn_max_age=600
     )
 }
